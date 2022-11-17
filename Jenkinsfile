@@ -24,7 +24,7 @@ pipeline{
         
         stage('Docker Build'){
             steps{
-                sh "docker build . -t moosic39/AlfredPennyworth:${DOCKER_TAG} "
+                sh "docker build . -t moosic39/alfred-pennyworth:${DOCKER_TAG} "
             }
         }
         
@@ -34,7 +34,7 @@ pipeline{
                     sh "docker login -u moosic39 -p ${dockerHubPwd}"
                 }
                 
-                sh "docker push moosic39/AlfredPennyworth:${DOCKER_TAG} "
+                sh "docker push moosic39/alfred-pennyworth:${DOCKER_TAG} "
             }
         }
         
