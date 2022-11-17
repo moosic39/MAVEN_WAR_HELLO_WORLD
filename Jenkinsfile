@@ -9,9 +9,10 @@ pipeline{
     stages{
         stage('SCM'){
             steps{
-                git credentialsId: 'github', 
-                    branch: "main"
-                    url: 'https://github.com/javahometech/dockeransiblejenkins'
+                git url: 'https://github.com/moosic39/MAVEN_WAR_HELLO_WORLD.git',
+                credentialsId: 'github', 
+                branch: "main"
+                    
             }
         }
         
