@@ -1,6 +1,7 @@
 ---
-- hosts: dev
+- name: "Test"
+  hosts: [dev]
 
   tasks:
-    - name: "ping"
+    - name: "toto"
       ping:
