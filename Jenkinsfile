@@ -40,14 +40,7 @@ pipeline{
         
         stage('Docker Deploy'){
             steps{
-              ansiblePlaybook 
-              becomeUser: 'parallels',
-              credentialsId: 'parallels',
-               disableHostKeyChecking: true,
-                extras: "-e DOCKER_TAG=${DOCKER_TAG}",
-                 installation: 'ansible',
-                  inventory: 'dev.inv',
-                   playbook: 'deploy-docker.yml'
+              ansiblePlaybook becomeUser: 'parallels', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
             }
         }
     }
