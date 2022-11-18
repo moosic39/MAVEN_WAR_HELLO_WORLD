@@ -1,6 +1,6 @@
 ---
 - hosts: dev
-  become: True
+
   tasks:
     - name: "ping"
       ping:
