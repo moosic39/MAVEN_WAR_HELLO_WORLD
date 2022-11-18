@@ -40,7 +40,7 @@ pipeline{
         
         stage('Docker Deploy'){
             steps{
-              ansiblePlaybook installation: 'ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
+              ansiblePlaybook become: true, credentialsId: '1894a35d-bd20-45a8-8ab7-7b647e234084', installation: 'ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml', vaultCredentialsId: 'secretTxt'
             }
         }
     }
