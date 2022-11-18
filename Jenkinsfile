@@ -30,8 +30,8 @@ pipeline{
         
         stage('DockerHub Push'){
             steps{
-                withCredentials([string(credentialsId: 'moosic39')]) {
-                    sh "cat ~/dockerhubPassword | docker login -u moosic39 --password-stdin"
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-credential', passwordVariable: 'password', usernameVariable: 'username')]) {
+                    sh "docker login -u username -p password"
                 }
                 
                 sh "docker push moosic39/alfred-pennyworth:${DOCKER_TAG} "
